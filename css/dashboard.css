@@ -1,0 +1,290 @@
+  /* Dashboard card styles */
+  .dashboard-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .dashboard-card h4 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+
+  .dashboard-card p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .dashboard-card i {
+    font-size: 2.5rem;
+    opacity: 0.8;
+  }
+
+  /* Custom colors */
+  .bg-blue {
+    background: #0d6efd;
+  }
+
+  .bg-yellow {
+    background: #ffc107;
+    color: #212529;
+  }
+
+  .sidebar {
+    min-height: 100vh;
+    background: #0d6efd;
+    color: white;
+  }
+
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+  }
+
+  .sidebar a:hover {
+    background: #0b5ed7;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  @media (max-width: 767.98px) {
+    #sidebar {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      height: calc(100% - 56px);
+      z-index: 1030;
+    }
+
+    /* Reduce brand text size on small screens */
+    .navbar-brand {
+      font-size: 0.85rem;
+    }
+
+    .dashboard-card {
+      text-align: center;
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+
+    h5 {
+      text-align: center;
+    }
+
+  }
+
+  @media (max-width: 425px) {
+    .dashboard-card {
+      text-align: center;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    h5 {
+      text-align: center;
+    }
+  }
+
+  /* gallery */
+  .table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  #gallery-image img {
+    height: 100px;
+  }
+
+  /* ✅ Modal Custom */
+  .modal-content {
+    border-radius: 15px;
+    background: #ffffffee;
+    backdrop-filter: blur(8px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .modal-header {
+    border-bottom: none;
+    background: #0d6efd;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .modal-footer {
+    border-top: none;
+  }
+
+  /* ✅ Responsive fixes */
+  @media (max-width: 425px) {
+    .navbar-brand {
+      font-size: 0.85rem;
+    }
+
+    h2,
+    .modal-title {
+      font-size: 1rem;
+    }
+  }
+
+  tbody button {
+    margin-right: 10px;
+  }
+
+  /* update profile */
+  .form-container .form-control {
+    margin-bottom: 15px;
+  }
+
+  .form-container .form-label {
+    margin-bottom: 5px;
+  }
+
+  .custom-border {
+    border-width: 3px;
+    border-radius: 20px;
+  }
+
+  .form-container {
+    border: 3px solid blueviolet;
+    background: #055bc4;
+  }
+
+  /* Section */
+
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .section h2.section-head {
+    text-align: center;
+    margin-bottom: 10px;
+    color: green;
+  }
+
+  .section h2.section-head:after {
+    content: "";
+    background: #e74c3c;
+    display: block;
+    width: 100px;
+    height: 3px;
+    margin: 10px auto;
+  }
+
+  #events,
+  #jobs,
+  #gallery {
+    text-align: center;
+  }
+
+  .card {
+    text-align: center;
+  }
+
+  /* carousel */
+  .carousel-control-prev,
+  .carousel-control-next {
+    background: none !important;
+    /* remove grey background */
+    border: none !important;
+    /* remove border */
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-size: 100% 100%;
+    /* keep arrows clean */
+    color: #000;
+  }
+
+  .carousel-inner img {
+    height: 450px;
+    /* set your desired height */
+    width: 100%;
+    object-fit: cover;
+    /* crops extra area but keeps aspect ratio */
+    margin: auto;
+    /* centers the images */
+    border-radius: 10px;
+    /* optional rounded corners */
+  }
+
+  .carousel-indicators [data-bs-target] {
+    margin: 0 2px;
+    /* decrease horizontal gap between dots */
+    width: 25px;
+    /* adjust dot size if you want */
+    height: 5px;
+    border-radius: 25%;
+  }
+
+  .carousel-fade .carousel-item {
+    transition: opacity 1.5s ease-in-out;
+    /* Slow fade: 1.5 seconds */
+  }
+
+  /* Send Email */
+  .compose-box {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    margin-top: 25px;
+  }
+
+  .compose-header {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #0d6efd;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+  }
+
+  .compose-body textarea {
+    resize: none;
+    min-height: 180px;
+  }
+
+  .btn-send {
+    background: #0d6efd;
+    border: none;
+    transition: 0.3s;
+  }
+
+  .btn-send:hover {
+    background: #0b5ed7;
+  }
+
+  .btn-discard {
+    background: #dc3545;
+    border: none;
+    transition: 0.3s;
+    margin-right: 10px;
+  }
+
+  .btn-discard:hover {
+    background: #bb2d3b;
+  }
+
+  .compose-box {
+    border: 13px solid blue;
+  }
