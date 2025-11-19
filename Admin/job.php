@@ -156,9 +156,9 @@ if ($result) {
   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-4">
     <div class="card shadow-sm">
       <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
-        <span><i class="bi bi-briefcase me-2"></i>Jobs List</span>
+        <span><i class="bi bi-briefcase mr-2"></i>Jobs List</span>
         <button class="btn btn-light btn-sm text-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-          <i class="bi bi-plus-circle me-2"></i>New
+          <i class="bi bi-plus-circle mr-2"></i>Add New Job
         </button>
       </div>
 

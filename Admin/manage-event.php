@@ -126,8 +126,8 @@ unset($_SESSION['error'], $_SESSION['success']);
 <body>
     <!-- ====================== MAIN CONTENT ====================== -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h2 class="fw-bold">Event Management</h2>
+        <div class="d-flex text-center pt-3 pb-2 mb-3 border-bottom">
+           
         </div>
 
         <!-- ➕ Add Event Modal -->

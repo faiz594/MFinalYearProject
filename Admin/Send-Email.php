@@ -63,27 +63,26 @@ unset($_SESSION['message'], $_SESSION['error']);
 
 <?php include "Admin-sidebar.php"; ?>
 
-<!-- ✅ Main Content (aligned beside sidebar) -->
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-  <div class="compose-box mt-3" id="email-box">
-    <div class="compose-header">
+  <div class="compose-box mt-4 p-4 bg-white rounded-4 shadow-lg" style="border:none;">
+    <div class="compose-header mb-4 fs-4 fw-bold text-primary">
       <i class="bi bi-envelope-plus me-2"></i> New Message
     </div>
 
     <!-- Flash Messages -->
     <?php if ($message): ?>
-      <div class="alert alert-success mt-3"><?php echo htmlspecialchars($message); ?></div>
+      <div class="alert alert-success rounded-3 shadow-sm"><?php echo htmlspecialchars($message); ?></div>
     <?php endif; ?>
     <?php if ($error): ?>
-      <div class="alert alert-danger mt-3"><?php echo htmlspecialchars($error); ?></div>
+      <div class="alert alert-danger rounded-3 shadow-sm"><?php echo htmlspecialchars($error); ?></div>
     <?php endif; ?>
 
     <?php if (empty($alumniEmails)): ?>
-      <!-- ====================== SELECT BATCH FORM ====================== -->
-      <form method="POST" class="mt-3">
+      <!-- SELECT BATCH FORM -->
+      <form method="POST">
         <div class="mb-3">
-          <label for="batch" class="form-label">Select Batch</label>
-          <select name="batch" id="batch" class="form-select" required>
+          <label for="batch" class="form-label fw-semibold">Select Batch</label>
+          <select name="batch" id="batch" class="form-select rounded-3 shadow-sm p-2" required>
             <option value="">-- Select Batch --</option>
             <?php foreach ($batches as $batch): ?>
               <option value="<?php echo $batch; ?>" <?php echo ($selectedBatch == $batch) ? 'selected' : ''; ?>>
@@ -92,19 +91,19 @@ unset($_SESSION['message'], $_SESSION['error']);
             <?php endforeach; ?>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">Load Alumni</button>
+        <button type="submit" class="btn btn-primary rounded-3 px-4 py-2">Load Alumni</button>
       </form>
 
     <?php else: ?>
-      <!-- ====================== EMAIL FORM ====================== -->
-      <form method="POST" class="mt-3">
-        <div class="mb-3">
-          <label class="form-label">
+      <!-- EMAIL FORM -->
+      <form method="POST">
+        <div class="mb-4">
+          <label class="form-label fw-semibold">
             Alumni from Batch <?php echo htmlspecialchars($selectedBatch); ?> (<?php echo count($alumniEmails); ?> total)
           </label>
-          <div id="alumniList" class="border p-2 rounded bg-light" style="max-height: 150px; overflow-y: auto;">
+          <div id="alumniList" class="p-3 rounded-4 bg-light overflow-auto shadow-sm" style="max-height: 180px;">
             <?php foreach ($alumniEmails as $email): ?>
-              <div class="form-check">
+              <div class="form-check mb-1">
                 <input class="form-check-input alumni-check" type="checkbox" name="selected_emails[]"
                   value="<?php echo htmlspecialchars($email); ?>"
                   id="email_<?php echo md5($email); ?>" checked>
@@ -117,28 +116,28 @@ unset($_SESSION['message'], $_SESSION['error']);
         </div>
 
         <!-- Recipients Preview -->
-        <div class="mb-2">
-          <label class="form-label">Recipients Preview</label>
-          <input type="text" id="recipients" class="form-control"
+        <div class="mb-3 mt-3">
+          <label class="form-label fw-semibold">Recipients Preview</label>
+          <input type="text" id="recipients" class="form-control rounded-3 shadow-sm"
             value="<?php echo htmlspecialchars(implode(', ', $alumniEmails)); ?>" readonly>
         </div>
 
         <!-- Subject -->
-        <div class="mb-2">
-          <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+        <div class="mb-3">
+          <input type="text" name="subject" class="form-control rounded-3 shadow-sm" placeholder="Subject" required>
         </div>
 
         <!-- Message Body -->
-        <div class="compose-body mb-3">
-          <textarea name="message" id="message" class="form-control" rows="10" placeholder="Write your message..." required></textarea>
+        <div class="mb-3">
+          <textarea name="message" id="message" class="form-control rounded-3 shadow-sm" rows="10" placeholder="Write your message..." required></textarea>
         </div>
 
         <!-- Buttons -->
         <div class="d-flex justify-content-end gap-2">
-          <button type="button" class="btn btn-danger mr-2" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>'">
+          <button type="button" class="btn btn-danger rounded-3 mr-2 px-3 py-2" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF']; ?>'">
             <i class="bi bi-x-circle"></i> Discard
           </button>
-          <button type="submit" name="send_emails" class="btn btn-primary">
+          <button type="submit" name="send_emails" class="btn btn-primary rounded-3 px-4 py-2">
             <i class="bi bi-send"></i> Send
           </button>
         </div>
@@ -147,9 +146,7 @@ unset($_SESSION['message'], $_SESSION['error']);
   </div>
 </main>
 
-<!-- ====================== JS ====================== -->
 <script>
-  // Update Recipients Preview dynamically
   document.querySelectorAll('.alumni-check').forEach(checkbox => {
     checkbox.addEventListener('change', function() {
       const selected = Array.from(document.querySelectorAll('.alumni-check:checked')).map(cb => cb.value);

@@ -155,7 +155,7 @@ include "Admin-sidebar.php";
     <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
       <span>Gallery List</span>
       <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#uploadModal">
-        <i class="bi bi-upload"></i> Upload Image
+        <i class="bi bi-upload mr-2"></i> Add Gellery
       </button>
     </div>
 

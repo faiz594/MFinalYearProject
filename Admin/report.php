@@ -1,15 +1,18 @@
 <?php
 session_start();
 include "configure.php";
-include "Admin-sidebar.php";
+include "Admin-sidebar.php"; // Sidebar + Navbar
 ?>
+
 <style>
 .export-btns button {
     margin-right: 10px;
 }
 </style>
 
-<div class="container mt-5">
+<!-- MAIN CONTENT AREA -->
+<div class="col-md-9 col-lg-10 ms-sm-auto px-4 mt-4">
+
     <h2 class="mb-4">Alumni Report (By Batch)</h2>
 
     <!-- SELECT BATCH -->
@@ -28,7 +31,9 @@ include "Admin-sidebar.php";
             <?php endwhile; ?>
         </select>
 
-        <button class="btn btn-primary mt-3" name="show">Generate Report</button>
+        <button class="btn btn-primary mt-3" name="show">
+            <i class="bi bi-file-earmark-text me-1"></i> Generate Report
+        </button>
     </form>
 
     <hr>
@@ -64,7 +69,6 @@ include "Admin-sidebar.php";
         $stmt->execute();
         $result = $stmt->get_result();
 
-        // Store rows for table
         $rows = [];
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
@@ -76,13 +80,15 @@ include "Admin-sidebar.php";
         <h3>Batch: <?= $batch ?> Report</h3>
         <h4>Total Alumni Found: <?= $total ?></h4>
 
-        <!-- EXPORT BUTTONS (CSV removed) -->
+        <!-- EXPORT BUTTON -->
         <div class="export-btns mb-3">
-            <button class="btn btn-success" onclick="printReport()">Print / Save PDF</button>
+            <button class="btn btn-success" onclick="printReport()">
+                <i class="bi bi-printer me-1"></i> Print / Save PDF
+            </button>
         </div>
 
         <!-- REPORT TABLE -->
-        <div id="report-area">
+        <div id="report-area" class="table-responsive">
             <table border="1" cellpadding="10" cellspacing="0" width="100%">
                 <tr>
                     <th>Name</th>
@@ -95,7 +101,7 @@ include "Admin-sidebar.php";
                     <tr>
                         <td><?= htmlspecialchars($row['std_name']) ?></td>
                         <td><?= htmlspecialchars($row['std_email']) ?></td>
-                        <td><?= (empty($row['current_job']) || $row['current_job'] == " - at ") ? "No Job Added" : htmlspecialchars($row['current_job']) ?></td>
+                        <td><?= (empty($row['current_job']) || $row['current_job'] == " -  at ") ? "No Job Added" : htmlspecialchars($row['current_job']) ?></td>
                         <td><?= htmlspecialchars($row['Batch']) ?></td>
                     </tr>
                 <?php endforeach; ?>
@@ -103,7 +109,8 @@ include "Admin-sidebar.php";
         </div>
 
     <?php endif; ?>
-</div>
+
+</div> <!-- END MAIN CONTENT -->
 
 <script>
 function printReport() {
