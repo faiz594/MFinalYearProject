@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
 include "configure.php"; // DB connection
 // ======================
 // CREATE UPLOAD FOLDER IF NOT EXISTS
@@ -297,8 +300,5 @@ include "Admin-sidebar.php";
     </div>
   </div>
 </div>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

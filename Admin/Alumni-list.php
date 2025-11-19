@@ -1,6 +1,10 @@
 <?php 
-include "Admin-sidebar.php"; 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
 include "configure.php"; // Database connection
+include "Admin-sidebar.php"; 
+
 
 // =================== VERIFY ALUMNI ===================
 if (isset($_GET['verify_id'])) {
