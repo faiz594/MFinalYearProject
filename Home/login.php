@@ -165,6 +165,8 @@ include "header.php";
 
 <?php if (!empty($error)): ?>
   <div class="alert alert-danger text-center mt-2"><?php echo $error; ?></div>
-<?php endif; ?>
+<?php endif; 
+include_once "footer.php"
+?>
 </body>
 </html>

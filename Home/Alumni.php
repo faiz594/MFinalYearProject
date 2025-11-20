@@ -74,5 +74,6 @@ include "configure.php"; // DB connection
 </main>
 
 <script src="../javascript/javascript.js"></script>
+<?php include_once "footer.php" ?>
 </body>
 </html>

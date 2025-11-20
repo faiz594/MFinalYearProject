@@ -40,7 +40,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
   <!-- Navbar -->
   <header id="header">
     <nav class="navbar navbar-expand-md navbar-light">
-      <div class="container">
+      <div class="container justify-content-between">
         <!-- Logo -->
         <a class="navbar-brand" href="index.php">
           <img src="../CSLOGO.png" alt="Logo" width="150" height="150">

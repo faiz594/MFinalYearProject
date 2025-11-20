@@ -1,65 +1,102 @@
-<?php
-// Detect the current page
-$current_page = basename($_SERVER['PHP_SELF']);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php echo $pageTitle ?? "Alumni Portal"; ?></title>
+  <title>Responsive Navbar with Logo</title>
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <style>
-    .active-link {
-      background-color: #ccb4ceff !important;
-      color: #0d6efd !important;
-      font-weight: 600 !important;
-      border-radius: 8px 8px 8px 8px;
-      box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+    /* Custom CSS for Logo and Hover Effect */
+
+    .navbar-brand-logo {
+      /* Kept your 100px height for the logo */
+      height: 100px;
+      margin-right: 15px;
     }
 
-    .active-link i {
-      color: #0d6efd !important;
+    /* --- Navbar Link Styling --- */
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      color: #333;
+      position: relative;
+      transition: color 0.3s ease;
     }
 
-    .active-link:hover {
-      background-color: #ccb4ceff !important;
+    .navbar-nav .nav-link:hover {
+      color: #0d6efd;
+    }
+
+    /* Good Effect: Underline on Hover */
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      display: block;
+      margin-top: 5px;
+      right: 0;
+      background: #0d6efd;
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+
+    /* Optional: Change navbar background color */
+    .custom-navbar {
+      background-color: #f8f9fa;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Navbar -->
-  <header id="header">
-    <nav class="navbar navbar-expand-md navbar-light">
-      <div class="container">
-        <!-- Logo -->
-        <a class="navbar-brand" href="index.php">
-          <img src="../img/home/logo.jpg" alt="Logo" width="70" height="70">
-        </a>
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top py-0">
+    <div class="container-fluid px-5 py-0 mb-2">
 
-        <!-- Hamburger menu -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <a class="navbar-brand d-flex align-items-center py-0" href="#">
+        <img src="../img/home/brand.jpg" alt="CS Dept Logo" class="navbar-brand-logo">
+      </a>
 
-        <div class="collapse navbar-collapse sticky-top" id="mynavbar">
-          <ul class="navbar-nav mb-2 mb-lg-0 me-3">
-            <li class="nav-item"><a class="nav-link <?= ($current_page == 'index.php') ? 'active-link' : '' ?>" href="index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link <?= ($current_page == 'alumni.php') ? 'active-link' : '' ?>"  href="alumni.php">Alumni</a></li>
-            <li class="nav-item"><a class="nav-link <?= ($current_page == 'events.php') ? 'active-link' : '' ?>" href="events.php">Events</a></li>
-            <li class="nav-item"><a class="nav-link <?= ($current_page == 'signup.php') ? 'active-link' : '' ?>" href="signup.php">Sign Up</a></li>
-            <li class="nav-item"><a class="nav-link <?= ($current_page == 'login.php') ? 'active-link' : '' ?>" href="login.php">Login</a></li>
-          </ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav mr-5">
+          <li class="nav-item mx-3">
+            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="Alumni.php">Alumni</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="events.php">Events</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="About.php">About Us</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="Contact.php">Contact Us</a>
+          </li>
+        </ul>
+
+        <div class="mx-auto d-flex align-items-center">
+          <a class="btn btn-outline-primary mx-2" href="signup.php">Sign Up</a>
+          <a class="btn btn-outline-primary" href="login.php">Sign In</a>
         </div>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>

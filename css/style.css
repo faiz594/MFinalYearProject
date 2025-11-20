@@ -30,35 +30,6 @@
   margin: 20px auto;
 }
 
-/* Footer section */
-footer li {
-  list-style: none;
-  text-align: left;
-}
-
-footer div h4 {
-  text-align: center;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-#footer {
-  margin-top: 0px;
-  padding-top: 0px;
-  background-color: lightblue;
-  color: #000;
-}
-@media (max-width: 600px){
-  footer h4{
-    text-align: center;
-  }
-  footer ul li{
-    text-align: center;
-  }
-
-}
-
-
 /* signup portion */
 
 .alumni-form {
