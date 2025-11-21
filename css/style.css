@@ -153,105 +153,10 @@
   align-items: center;
 }
 
-/* event portion */
-.table td,
-.table th {
-  vertical-align: middle;
-}
-
-button a {
-  color: white;
-  ;
-}
-
-button a:hover {
-  background-color: #0069D9;
-  text-decoration: none;
-  color: white;
-  ;
-}
-
-/* Hod message and Introduction */
-.card {
-  border: none;
-  border-radius: none;
-  background: white;
-  width: 100%;
-}
-
-.card img {
-  border-radius: 12px 12px 0 0;
-  height: 280px;
-  object-fit: cover;
-  width: 100%;
-}
-
-.btn-read {
-  border-radius: 30px;
-  padding: 5px 20px;
-}
-
-.title-highlight {
-  font-weight: bold;
-  color: #333;
-}
-
-
-/* carousel */
-.carousel-control-prev,
-.carousel-control-next {
-  background: none !important; /* remove grey background */
-  border: none !important;     /* remove border */
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-size: 100% 100%;  /* keep arrows clean */
-  color: #000;
-}
-.carousel-inner img {
-  height: 450px;    /* set your desired height */
-  object-fit: cover; /* crops extra area but keeps aspect ratio */
-  margin: auto;      /* centers the images */
-  border-radius: 10px; /* optional rounded corners */
-}
-.carousel-indicators [data-bs-target] {
-  margin: 0 2px;   /* decrease horizontal gap between dots */
-  width: 25px;     /* adjust dot size if you want */
-  height: 5px;
-  border-radius: 25%;
-}
-.carousel-fade .carousel-item {
-  transition: opacity 1.5s ease-in-out; /* Slow fade: 1.5 seconds */
-}
-
 /* alumni */
 @media (max-width: 768px){
   .alumni{
 margin-bottom: 20px;
-  }
-}
-
-
-@media (max-width: 425px) {
-  .navbar .container-fluid {
-    flex-wrap: nowrap;        /* prevent wrapping */
-  }
-
-  .navbar .d-flex.align-items-center {
-    flex: 1;                          /* let brand take remaining space */
-    min-width: 0;                     /* prevent overflow */
-  }
-
-  .navbar-brand {
-    font-size: 0.1rem;      /* shrink brand text */
-    white-space: nowrap;    /* prevent text wrapping */
-    overflow: hidden;
-    text-overflow: ellipsis; /* add "..." if too long */
-  }
-
-  .navbar .dropdown {
-    flex-shrink: 0;      /* keep Admin button visible */
   }
 }
 
